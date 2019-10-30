@@ -4,8 +4,10 @@ const port = process.env.PORT || 5000
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-const dbx = process.env.DBURL
+const dbx = `mongodb+srv://${process.env.DBURL}:${process.env.DBURL}@alexmerced1-j5o9c.mongodb.net/test?retryWrites=true
+`
 
+console.log(dbx);
 /////////////////////
 //DATABASE
 /////////////////////
