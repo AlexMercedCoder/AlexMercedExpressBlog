@@ -4,16 +4,38 @@
     --bg: #F9F3C5;
     --fg: #87AAB9;
     --accent: #DE1B1B;
+    --text: 'Lexend Deca', sans-serif;
+    --title: 'Charm', cursive;
 }
 
-body {background-color: var(--bg); text-align: center; color: var(--fg)}
+body {background-color: var(--bg); text-align: center; color: var(--fg); font-family: var(--text)}
 
 .postcontainer{margin:10px auto; width: 80%; padding: 10px; background-color: var(--fg); color: var(--bg); border: 2px solid var(--accent); border-radius: 15px;}
 
-h1 {font-size: 3em; margin: 40px;}
+h1 {font-size: 3em; margin: 40px; font-family: var(--title);}
 
 h2{font-size: 2em; margin: 5px;}
 
-input[type="text"] {background-color: var(--fg); color: white; border: 3px solid var(--accent); padding: 5px; border-radius: 15px; width: 40%; margin: 30px;}
+input[type="text"], textarea{background-color: var(--fg); color: white; border: 3px solid var(--accent); padding: 5px; border-radius: 15px; width: 40%; margin: 30px;}
 
-input[name="body"] {display: block; margin: auto; width: 80%; height: 300px; overflow: scroll;}
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.idgesg.net/images/article/2018/07/digital-transformation_world-map_outsourcing_iot_edge-computing-100765178-large.jpg");
+
+  /* Set a specific height */
+  height: 400px;
+
+  width: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;}
+
+  .hero h1 {position: relative; top: 40%; text-align: center; font-size: 4em; margin: 0; padding: 0;}
+
+  header nav {display: flex; background-color: var(--fg); color: var(--bg); padding: 5px; width: 100%; justify-content: space-around;}
+
+  header nav a {display: block; color: var(--bg); text-decoration: none; text-transform: uppercase;}
+
+  header nav a:hover {background-color: var(--bg); color: var(--fg);}

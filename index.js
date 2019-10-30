@@ -125,7 +125,8 @@ app.delete('/index/:indexOf', (req, res) => {
 //Update Routes
 /////////////////////
 app.get('/index/:indexOf/edit', (req, res)=>{
-    Blogs.findById(req.params.id, (err, foundData)=>{ //find the fruit
+    Blogs.findById(req.params.indexOf, (err, foundData)=>{
+        console.log(foundData)
         res.render(
     		'edit.ejs',
     		{
@@ -138,7 +139,7 @@ app.get('/index/:indexOf/edit', (req, res)=>{
 });
 
 app.put('/index/:indexOf', (req, res) => {
-    Blogs.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+    Blogs.findByIdAndUpdate(req.params.indexOf, req.body, {new:true}, (err, updatedModel)=>{
         res.redirect('/index');
     });
 });
