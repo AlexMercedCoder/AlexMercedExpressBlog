@@ -1,0 +1,19 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --bg: #F9F3C5;
+    --fg: #87AAB9;
+    --accent: #DE1B1B;
+}
+
+body {background-color: var(--bg); text-align: center; color: var(--fg)}
+
+.postcontainer{margin:10px auto; width: 80%; padding: 10px; background-color: var(--fg); color: var(--bg); border: 2px solid var(--accent); border-radius: 15px;}
+
+h1 {font-size: 3em; margin: 40px;}
+
+h2{font-size: 2em; margin: 5px;}
+
+input[type="text"] {background-color: var(--fg); color: white; border: 3px solid var(--accent); padding: 5px; border-radius: 15px; width: 40%; margin: 30px;}
+
+input[name="body"] {display: block; margin: auto; width: 80%; height: 300px; overflow: scroll;}

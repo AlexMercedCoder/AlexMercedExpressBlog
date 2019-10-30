@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <% include ./partials/head.ejs %>
+    </head>
+
+
+    <!-- THE BODY OF THE WEBSITE -->
+    <body>
+
+        <header>
+            <% include ./partials/header.ejs %>
+        </header>
+
+
+
+
+
+<!-- CONTENT OF PAGE BEGINS -->
+        <main>
+
+            <div class="createcontainer">
+                <h1>New Post</h1>
+       <form action="/index" method="POST">
+           Title: <input type="text" name="title" /><br/>
+           Author: <input type="text" name="author" /><br/>
+           Body: <input type="text" name="body" /><br/>
+           <input type="submit" name="" value="Submit Post"/>
+
+
+
+            </div>
+        </main>
+<!-- CONTENT OF PAGE ENDS -->
+
+
+
+
+
+
+
+        <footer>
+            <% include ./partials/footer.ejs %>
+        </footer>
+
+
+    </body>
+    <!-- END OF THE HTML FILE -->
+
+</html>
