@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 const dbx = `mongodb+srv://${process.env.DBURL}:${process.env.DBURL}@alexmerced1-j5o9c.mongodb.net/test?retryWrites=true
 `
+const moment = require('moment');
 
 console.log(dbx);
 /////////////////////
@@ -64,7 +65,8 @@ app.get('/index/', (request, response) => {
         console.log(data)
         response.render('index.ejs', {
             data: data,
-            tabTitle: 'Index'
+            tabTitle: 'Index',
+            moment: moment;
         });
     });
 });

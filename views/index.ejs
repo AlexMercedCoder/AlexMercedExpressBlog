@@ -24,7 +24,7 @@
 
                 <div class = "postcontainer">
                 <a href="/index/<%= post.id %>/"><h2><%= post.title %></h2>
-                </a><%= post.publishDate %>
+                </a><%= moment(post.publishDate ).format('YYYY-MM-DD')%>
 
                 </div>
 
