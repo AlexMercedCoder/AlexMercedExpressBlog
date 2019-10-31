@@ -66,7 +66,7 @@ app.get('/index/', (request, response) => {
         response.render('index.ejs', {
             data: data,
             tabTitle: 'Index',
-            moment: moment;
+            moment: moment
         });
     });
 });
