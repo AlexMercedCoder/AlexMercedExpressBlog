@@ -39,3 +39,5 @@ input[type="text"], textarea{background-color: var(--fg); color: white; border: 
   header nav a {display: block; color: var(--bg); text-decoration: none; text-transform: uppercase; transition: ease-in-out 2s; color: white; text-decoration: none; cursor: pointer;}
 
   header nav a:hover {background-color: var(--bg); color: var(--fg);}
+
+  .postcontainer a {color: white; text-decoration: none;}
