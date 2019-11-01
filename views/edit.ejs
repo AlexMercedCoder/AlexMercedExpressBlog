@@ -27,7 +27,15 @@
            Author<br><input type="text" name="author" value="<%= data.author%>"/><br/>
            Body<br> <textarea name="body" cols="50" rows="10" value=""><%= data.body%></textarea>
            <br>
+           Password: <input type="password" name="pw"/><br/>
            <input type="submit" name="" value="Submit Post"/>
+       </form>
+<br><Br>
+       <form action="/index/<%=data.id%>?_method=DELETE" method="POST">
+
+       Password: <input type="password" name="pw"/><br/>
+
+       <input type="submit" value="DELETE"/>
 
 
 

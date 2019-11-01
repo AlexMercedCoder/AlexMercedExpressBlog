@@ -34,8 +34,8 @@ input[type="text"], textarea{background-color: var(--fg); color: white; border: 
 
   .hero h1 {position: relative; top: 40%; text-align: center; font-size: 4em; margin: 0; padding: 0;}
 
-  header nav {display: flex; background-color: var(--fg); color: var(--bg); padding: 5px; width: 100%; justify-content: space-around;}
+  header nav {display: flex; background-color: var(--fg); color: var(--bg); padding: 5px; width: 100%; justify-content: space-around; font-size: 1.2em;}
 
-  header nav a {display: block; color: var(--bg); text-decoration: none; text-transform: uppercase;}
+  header nav a {display: block; color: var(--bg); text-decoration: none; text-transform: uppercase; transition: ease-in-out 2s; color: white; text-decoration: none; cursor: pointer;}
 
   header nav a:hover {background-color: var(--bg); color: var(--fg);}

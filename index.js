@@ -2,11 +2,13 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
 const methodOverride = require('method-override');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const db = mongoose.connection;
 const dbx = `mongodb+srv://${process.env.DBURL}:${process.env.DBURL}@alexmerced1-j5o9c.mongodb.net/test?retryWrites=true
 `
 const moment = require('moment');
+const dbupdateobject = { useNewUrlParser:true, useUnifiedTopology:true, useFindAndModify:false}
 
 console.log(dbx);
 /////////////////////
@@ -17,7 +19,7 @@ console.log(dbx);
 const mongoURI = dbx + 'amblog';
 
 // Connect to Mongo
-mongoose.connect( mongoURI );
+mongoose.connect( mongoURI, dbupdateobject );
 
 // Connection Error/Success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -76,11 +78,15 @@ app.get('/index/', (request, response) => {
 //Create Routes
 /////////////////////
 app.post('/index/', (req, res) => {
+    if (req.body.pw === process.env.PW){
     req.body.publishDate = new Date();
     console.log(req.body);
     Blogs.create(req.body, (error, created)=>{
         res.redirect('/index');
-    });
+    });}else{
+        console.log('wrong password');
+        res.redirect('/index');
+    }
 });
 
 app.get('/index/newblog', (req, res) => {
@@ -106,7 +112,7 @@ app.get('/index/:indexOf', function(req, res){
 //Delete Route
 /////////////////////
 
-app.get('/index/delete/delete', (request, response) => {
+app.get('/admin/', (request, response) => {
     Blogs.find({}, (error, data)=>{
         console.log(data)
         response.render('delete.ejs', {
@@ -117,10 +123,14 @@ app.get('/index/delete/delete', (request, response) => {
 });
 
 app.delete('/index/:indexOf', (req, res) => {
+    if (req.body.pw === process.env.PW){
     console.log(req.params)
     Blogs.findByIdAndRemove(req.params.indexOf, (err, data)=>{
         res.redirect('/index');//redirect back to fruits index
-    });
+    });}else{
+        console.log('wrong password');
+        res.redirect('/index');
+    }
 });
 
 /////////////////////
@@ -141,7 +151,11 @@ app.get('/index/:indexOf/edit', (req, res)=>{
 });
 
 app.put('/index/:indexOf', (req, res) => {
+    if (req.body.pw === process.env.PW){
     Blogs.findByIdAndUpdate(req.params.indexOf, req.body, {new:true}, (err, updatedModel)=>{
         res.redirect('/index');
-    });
+    });}else{
+        console.log('wrong password');
+        res.redirect('/index');
+    }
 });
